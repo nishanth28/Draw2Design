@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,15 +17,50 @@
                         <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                    <view key="view" contentMode="scaleAspectFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DDBG" translatesAutoresizingMaskIntoConstraints="NO" id="idE-8n-R7b">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paintICon" translatesAutoresizingMaskIntoConstraints="NO" id="qSg-SC-nvF">
+                                <rect key="frame" x="87.5" y="192" width="200" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="76w-na-BYv"/>
+                                    <constraint firstAttribute="height" constant="200" id="STL-iQ-let"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2017 Nishapp. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OY6-7t-0YH">
+                                <rect key="frame" x="16" y="644.5" width="343" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="idE-8n-R7b" secondAttribute="bottom" id="0BP-Jz-go9"/>
+                            <constraint firstItem="OY6-7t-0YH" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="3HI-NH-Udk"/>
+                            <constraint firstItem="idE-8n-R7b" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="6P5-xd-SWZ"/>
+                            <constraint firstItem="qSg-SC-nvF" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-41.5" id="EiM-JU-EOe"/>
+                            <constraint firstItem="idE-8n-R7b" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="JFM-8r-8GZ"/>
+                            <constraint firstItem="qSg-SC-nvF" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="M4s-ev-76o"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="OY6-7t-0YH" secondAttribute="bottom" constant="8" id="QBp-ig-0qs"/>
+                            <constraint firstItem="OY6-7t-0YH" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="16" id="UlK-Xk-qNj"/>
+                            <constraint firstAttribute="trailing" secondItem="OY6-7t-0YH" secondAttribute="trailing" constant="16" id="lJC-YV-CAa"/>
+                            <constraint firstAttribute="trailing" secondItem="idE-8n-R7b" secondAttribute="trailing" id="uqd-us-2KA"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="45.600000000000001" y="142.57871064467767"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="DDBG" width="1024" height="1024"/>
+        <image name="paintICon" width="730" height="730"/>
+    </resources>
 </document>
