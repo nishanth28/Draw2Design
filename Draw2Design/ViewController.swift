@@ -8,13 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController,updateSettingsDelegate {
+class ViewController: UIViewController,updateSettingsDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     @IBOutlet weak var drawArea: UIImageView!
     @IBOutlet weak var toolBar: UIToolbar!
     
     var lastPoint = CGPoint.zero
     var swiped:Bool = false
+    
+    let imagePick = UIImagePickerController()
     
     var red : CGFloat = 0.0
     var green : CGFloat = 0.0
@@ -29,7 +31,11 @@ class ViewController: UIViewController,updateSettingsDelegate {
     }
     
     @IBAction func refresh(_ sender: UIBarButtonItem) {
-        drawArea.image = nil
+        //drawArea.image = nil
+        imagePick.allowsEditing = false
+        imagePick.sourceType = .photoLibrary
+        
+        present(imagePick,animated:true)
     }
     
     @IBAction func eraser(_ sender: UIBarButtonItem) {
@@ -109,6 +115,20 @@ class ViewController: UIViewController,updateSettingsDelegate {
                   (19,128,254),
                   (184,184,184)]
                   customiseBar()
+            imagePick.delegate = self
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
+            drawArea.contentMode = .scaleAspectFit
+            drawArea.image = pickedImage
+        }
+        dismiss(animated: true,completion:nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
